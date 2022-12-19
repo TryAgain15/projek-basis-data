@@ -17,7 +17,7 @@
 </head>
 <body background="image/bg.jpg" style="background-size: 100%; width: 500% background-repeat: no-repeat ">
 <!-- MENU NAVIGASI BAR -->
-<nav class="navbar navbar-expand-lg bg-light m-sm-auto shadow p-3 mb-5 bg-body rounded">
+<nav class="navbar navbar-expand-lg bg-light m-sm-auto shadow p-3 mb-5 bg-body rounded fixed">
   <div class="container-fluid">
     <a class="navbar-brand" href="index.php"><img src="image/logo.png" height="40px"> Rosalia Indah Express Pasuruan</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -197,7 +197,9 @@
         <td><?php echo $hasil['jadwal']; ?></td>
         <td><?php echo $hasil['jnorm']; ?></td>
         <td><?php echo $hasil['jtua']; ?></td>
-        
+        <td><a href="edit.php?noid=<?php echo $hasil['noid']; ?>">Edit</a> | 
+        <a href="php/delete.php?&noid=<?php echo $hasil['noid']; ?>">Hapus</a> </td>
+
     </tr>
     <?php
         }
