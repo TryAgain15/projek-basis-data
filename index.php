@@ -197,15 +197,16 @@
         <td><?php echo $hasil['jadwal']; ?></td>
         <td><?php echo $hasil['jnorm']; ?></td>
         <td><?php echo $hasil['jtua']; ?></td>
-        <td><a href="edit.php?noid=<?php echo $hasil['noid']; ?>">Edit</a> | 
-        <a href="php/delete.php?&noid=<?php echo $hasil['noid']; ?>">Hapus</a> </td>
+        <td>
+          <a href="edit.php?noid=<?php echo $hasil['noid']; ?>"><button type="button" class="btn btn-warning btn-outline-dark">Edit</button></a> | 
+        <a href="php/delete.php?&noid=<?php echo $hasil['noid']; ?>"><button type="button" class="btn btn-danger btn-outline-dark text-light">Hapus</button></a> </td>
 
     </tr>
     <?php
         }
     ?>
 </table>
-<a href="print.php"> <input type="button" value="cetak"> </a>
+<a href="print.php"> <input type="button" value="CETAK" class="btn btn-info btn-outline-dark"> </a>
 </div>
 <!-- AKHIRAN TAMPILAN TABEL YANG SUDAH DIINPUTKAN -->
 </body>
