@@ -17,7 +17,7 @@
 </head>
 <body background="image/bg.jpg" style="background-size: 100%; width: 500% background-repeat: no-repeat ">
 <!-- MENU NAVIGASI BAR -->
-<nav class="navbar navbar-expand-lg bg-light m-sm-auto shadow p-3 mb-5 bg-body rounded fixed">
+<nav class="navbar navbar-expand-lg bg-light m-sm-auto shadow p-3 mb-5 bg-body rounded fixed-top ">
   <div class="container-fluid">
     <a class="navbar-brand" href="index.php"><img src="image/logo.png" height="40px"> Rosalia Indah Express Pasuruan</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -26,16 +26,16 @@
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
         <a class="nav-link active" aria-current="page" href="#home">Home</a>
-        <a class="nav-link" href="#about">About</a>
-        <a class="nav-link" href="#form">Pesan Tiket</a>
-        <a class="nav-link" href="#tabel">Daftar Pemesan Tiket</a>
+        <a class="nav-link" href="index.php#about">About</a>
+        <a class="nav-link" href="index.php#form">Pesan Tiket</a>
+        <a class="nav-link" href="index.php#tabel">Daftar Pemesan Tiket</a>
       </div>
     </div>
   </div>
 </nav>
     <!-- AKHIR MENU NAVIGASI BAR -->
     <!-- AWAL HOME -->
-    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+        <div class="tab-pane fade show active " id="home" role="tabpanel" aria-labelledby="home-tab">
     <section class="jumbotron text-center">
       <img src="image/jumbotron.jpg" alt="Bus" width="500px" class="rounded-circle">
   <h1 class="display-4">Selamat datang</h1>
@@ -69,38 +69,33 @@
     <div class="tab-pane fade show active" id="list" role="tabpanel" aria-labelledby="list-tab">
     <div class="container"  style="background-color: rgba(191, 255, 43, 0.8);">
     <h1 class="text-center " >List Harga Tiap Kelas</h1>
-    <table border="1" align="center">
-      <tr>
-        <td>No.</td>
-        <td>Tujuan</td>
-        <td>Kelas</td>
-        <td>Harga Normal</td>
-        <td>Harga Diskon(Untuk Lansis >60 Tahun)</td>
+    <table border="1" align="center" width="500px" style="text-align: center;">
+       <!-- Pilih Data di PHP -->
+       <tr>
+         <td>Kelas</td>
+         <td>Tujuan</td>
+         <td>Harga Normal</td>
+         <td>Jumlah Tiket yang Tersedia</td>
+       </tr>
+       <?php
+
+$sql="SELECT * FROM stock";
+$no = 1;
+$tampil = mysqli_query($db, $sql);
+while($array = mysqli_fetch_array($tampil)){
+?>
+
+<!-- PHP Berakhir -->
+<tr>
+  <td><?php echo $array['kelas']; ?></td>   
+  <td><?php echo $array['tujuan']; ?></td>
+  <td><?php echo $array['harga']; ?></td>
+  <td><?php echo $array['stock']; ?></td>
+
       </tr>
-      <tr>
-        <td>1.</td>
-        <td>Malang</td>
-        <td>Ekonomi</td>
-        <td>Rp. 10.000</td>
-        <td>20%</td>
-      </tr>
-      <tr>
-        <td>2.</td>
-        <td>Malang</td>
-        <td>Bisnis</td>
-        <td>Rp. 50.000</td>
-        <td>20%</td>
-      </tr>
-      <tr>
-        <td>3.</td>
-        <td>Malang</td>
-        <td>Eksekutif</td>
-        <td>Rp. 200.000</td>
-        <td>20%</td>
-      </tr>
-      <tr>
-        <td> <a href="php/p.php"></a> </td>
-      </tr>
+      <?php
+}
+?>
     </table>
     </div>
     </div>
@@ -112,6 +107,7 @@
       <h3>Pemesanan Tiket Bus AKAP</h3>
     <!-- FORMULIR PEMBELIAN TIKET -->
       <form action="php/proses.php" method="POST" enctype="multipart/form-data" onsubmit="return cekform()">
+      
       <!-- Isi konten/Formulir -->
       
         <label for="nama">Nama Lengkap</label>
@@ -180,6 +176,9 @@
         <td>Jadwal</td>
         <td>Jumlah Penumpang</td>
         <td>Jumlah Penumpang Lansia</td>
+        <td colspan="3">
+          Atur
+        </td>
     </tr>
     <tr>
     <?php
@@ -199,14 +198,16 @@
         <td><?php echo $hasil['jtua']; ?></td>
         <td>
           <a href="edit.php?noid=<?php echo $hasil['noid']; ?>"><button type="button" class="btn btn-warning btn-outline-dark">Edit</button></a> | 
-        <a href="php/delete.php?&noid=<?php echo $hasil['noid']; ?>"><button type="button" class="btn btn-danger btn-outline-dark text-light">Hapus</button></a> </td>
+          <a href="print1.php?noid=<?php echo $hasil['noid']; ?>"><button type="button" class="btn btn-primary btn-outline-dark text-white">Print</button></a> | 
+        <a href="php/delete.php?&noid=<?php echo $hasil['noid']; ?>"><button type="button" class="btn btn-danger btn-outline-dark text-white">Hapus</button></a> </td>
 
     </tr>
     <?php
         }
     ?>
 </table>
-<a href="print.php"> <input type="button" value="CETAK" class="btn btn-info btn-outline-dark"> </a>
+<p></p>
+<a href="print.php"> <input type="button" value="CETAK" class="btn btn-light btn-outline-dark"> </a>
 </div>
 <!-- AKHIRAN TAMPILAN TABEL YANG SUDAH DIINPUTKAN -->
 </body>

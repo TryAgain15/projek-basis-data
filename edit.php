@@ -1,3 +1,6 @@
+<?php
+include "php/koneksi.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,10 +23,10 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
-        <a class="nav-link active" aria-current="page" href="#home">Home</a>
-        <a class="nav-link" href="#about">About</a>
-        <a class="nav-link" href="#form">Pesan Tiket</a>
-        <a class="nav-link" href="#tabel">Daftar Pemesan Tiket</a>
+        <a class="nav-link active" aria-current="page" href="index.php">Home</a>
+        <a class="nav-link" href="index.php#about">About</a>
+        <a class="nav-link" href="index.php#form">Pesan Tiket</a>
+        <a class="nav-link" href="index.php#tabel">Daftar Pemesan Tiket</a>
       </div>
     </div>
   </div>
@@ -31,42 +34,38 @@
     <!-- AKHIR MENU NAVIGASI BAR -->
     <!-- AWAL HOME -->
 
+    
     <!-- DAFTAR HARGA -->
     <div class="tab-pane fade show active" id="list" role="tabpanel" aria-labelledby="list-tab">
     <div class="container"  style="background-color: rgba(191, 255, 43, 0.8);">
     <h1 class="text-center " >List Harga Tiap Kelas</h1>
-    <table border="1" align="center">
-      <tr>
-        <td>No.</td>
-        <td>Tujuan</td>
-        <td>Kelas</td>
-        <td>Harga Normal</td>
-        <td>Harga Diskon(Untuk Lansis >60 Tahun)</td>
+    <table border="1" align="center" width="500px" style="text-align: center;">
+       <!-- Pilih Data di PHP -->
+       <tr>
+         <td>Kelas</td>
+         <td>Tujuan</td>
+         <td>Harga Normal</td>
+         <td>Jumlah Tiket yang Tersedia</td>
+       </tr>
+       <?php
+
+$sql="SELECT * FROM stock";
+$no = 1;
+$tampil = mysqli_query($db, $sql);
+while($array = mysqli_fetch_array($tampil)){
+?>
+
+<!-- PHP Berakhir -->
+<tr>
+  <td><?php echo $array['kelas']; ?></td>   
+  <td><?php echo $array['tujuan']; ?></td>
+  <td><?php echo $array['harga']; ?></td>
+  <td><?php echo $array['stock']; ?></td>
+
       </tr>
-      <tr>
-        <td>1.</td>
-        <td>Malang</td>
-        <td>Ekonomi</td>
-        <td>Rp. 10.000</td>
-        <td>20%</td>
-      </tr>
-      <tr>
-        <td>2.</td>
-        <td>Malang</td>
-        <td>Bisnis</td>
-        <td>Rp. 50.000</td>
-        <td>20%</td>
-      </tr>
-      <tr>
-        <td>3.</td>
-        <td>Malang</td>
-        <td>Eksekutif</td>
-        <td>Rp. 200.000</td>
-        <td>20%</td>
-      </tr>
-      <tr>
-        <td> <a href="php/p.php"></a> </td>
-      </tr>
+      <?php
+}
+?>
     </table>
     </div>
     </div>
@@ -120,7 +119,7 @@
         <p></p>
         <label for="jnorm">Jumlah Penumpang</label>
         <input type="number" name="jnorm" class="form-control" id="jnorm" value="<?php echo $array['jnorm'];?>">
-        <p style="font-size: 60%;">Bukan Lansia (Usia<60) </p>
+        <p style="font-size: 60%;">Bukan Lansia (Usia<60)> </p>
         <p></p>
         <label for="jtua">Jumlah Penumpang Lansia</label>
         <input type="number" name="jtua" class="form-control" id="jtua" value="<?php echo $array['jtua'];?>">
