@@ -22,7 +22,19 @@ include 'php/koneksi.php'
         <option value="bisnis">Bisnis</option>
         <option value="eksekutif">Eksekutif</option>
     </select>
-    <label for=""></label>
+    
+    <label for="tujuan">Tujuan</label>
+    <input type="text" name="malang" id="malang" disabled placeholder="Malang" class="form-control" >
+
+    <label for="jumlah">Jumlah</label>
+    <input type="number" name="jumlah" id="jumlah" class="form-control">
+
+    <label for="harga">Harga</label>
+    <input type="number" name="harga" id="harga" class="form-control">
+
+    <p></p>
+
+    <button type="submit" class="btn btn-success center-align" value="create" name="create">Beli</button>
 </form>
     </div>
 </body>
