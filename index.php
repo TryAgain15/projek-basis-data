@@ -156,7 +156,6 @@ while($array = mysqli_fetch_array($tampil)){
         <button type="reset" class="btn btn-danger">Reset</button>
         <!-- Akhir Tombol -->
         <!-- </form>     -->
-        <a href="php/p.php"> <input type="button" class="btn btn-primary" value="Cek Harga" name="Perkiraan Harga" ></a>
         
     </form>
     </div>   

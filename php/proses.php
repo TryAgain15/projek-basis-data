@@ -16,8 +16,6 @@ if(isset($_POST['create'])){
     $query = mysqli_query($db, $sql);
     // $query = mysqli_query($db, )
 
-// $sql = "INSERT INTO MyGuests (firstname, lastname, email)
-// VALUES ('John', 'Doe', 'john@example.com')";
 
 }
 header("location: ../print2.php");
