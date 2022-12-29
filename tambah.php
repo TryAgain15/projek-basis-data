@@ -15,7 +15,7 @@ include 'php/koneksi.php'
 </head>
 <body>
     <div class="container">
-<form action="" method="post">
+    <form action="php/proses2.php" method="post" enctype="multipart/form-data" onsubmit="return cekform()">
     <label for="kelas">Pilih Kelas</label>
     <select name="kelas" id="kelas" class="form-control">
         <option value="ekonomi">Ekonomi</option>
@@ -24,7 +24,7 @@ include 'php/koneksi.php'
     </select>
     
     <label for="tujuan">Tujuan</label>
-    <input type="text" name="malang" id="malang" disabled placeholder="Malang" class="form-control" >
+    <input type="text" name="tujuan" id="tujuan" disabled placeholder="Malang" class="form-control" value="Malang">
 
     <label for="jumlah">Jumlah</label>
     <input type="number" name="jumlah" id="jumlah" class="form-control">
