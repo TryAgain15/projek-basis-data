@@ -12,6 +12,13 @@
 	<!-- cek pesan notifikasi -->
 	<?php 
     include 'php/koneksi.php';
+	error_reporting(0);
+ 
+// 	session_start();
+// 	if (isset($_SESSION['username'])) {
+//     header("Location: tambah.php");
+// }
+	session_start();
 	if(isset($_GET['pesan'])){
 		if($_GET['pesan'] == "gagal"){
 			echo "Login gagal! username atau password salah!";
