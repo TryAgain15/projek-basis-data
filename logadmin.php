@@ -12,7 +12,7 @@
 	<!-- cek pesan notifikasi -->
 	<?php 
     include 'php/koneksi.php';
-	error_reporting(0);
+	
  
 // 	session_start();
 // 	if (isset($_SESSION['username'])) {
@@ -46,7 +46,7 @@
 			<tr>
 				<td></td>
 				<td></td>
-				<td><input type="submit" value="LOGIN"></td>
+				<td><input type="submit" value="LOGIN" name="submit" id="submit"></td>
 			</tr>
 		</table>			
 	</form>

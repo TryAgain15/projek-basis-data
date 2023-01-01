@@ -1,7 +1,11 @@
 <?php
-include 'php/koneksi.php'
-
+include 'php/koneksi.php';
+$tgl=date('Y-m-d');
+session_start();
+if(isset($_SESSION['sesi'])){
 ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -37,6 +41,18 @@ include 'php/koneksi.php'
 
     <button type="submit" class="btn btn-success center-align" value="create" name="create">Beli</button>
 </form>
+<a href="logout.php"><button type="button" class="btn btn-primary">logout</button></a>
     </div>
 </body>
+
+<?php
+}
+else {
+    echo "<script>
+        alert('Anda Harus Login Dahulu!');
+    </script>";
+    header("location:logadmin.php?pesan=belum_login");
+}
+
+?>
 </html>
