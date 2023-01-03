@@ -1,14 +1,28 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Membuat Login Dengan PHP dan MySQLi - WWW.MALASNGODING.COM</title>
+	<title>Login Admin</title>
 	<link rel="stylesheet" href="bootstrap/css/bootstrap.css">
-	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/login.css">
 </head>
 <body>
-	<div class="container">
-	<h2>Login</h2>
-	<br>
+<div class="container">
+    <div class="row">
+      
+      <div class="col-sm-6 col-md-5 hidden-xs hidden-sm">   
+         <img src="https://raw.githubusercontent.com/rexxars/react-hexagon/master/logo/react-hexagon.png" alt="" class="center-block img-responsive" />
+        </div>
+      
+        <div class="col-md-1 hidden-xs hidden-sm">   
+          <div class="border-login"></div>
+        </div>
+      
+      
+        <div class="col-sm-12 col-xs-12 col-md-4">            
+           <div class="space-top">
+             
+             
+             <h3 class="text-center">Login</h3>
 	<!-- cek pesan notifikasi -->
 	<?php 
     include 'php/koneksi.php';
@@ -31,8 +45,8 @@
 	?>
 	<br/>
 	<br/>
-	<form method="post" action="cek_login.php">
-		<table>
+	<form method="post" action="cek_login.php" class="form-signin form-horizontal">
+		<!-- <table>
 			<tr>
 				<td>Username</td>
 				<td>:</td>
@@ -48,8 +62,26 @@
 				<td></td>
 				<td><input type="submit" value="LOGIN" name="submit" id="submit"></td>
 			</tr>
-		</table>			
+		</table>			 -->
+
+		<label class="username"> Username</label>
+                                           
+            <input type="text" class="form-control" name="username" placeholder="Masukkan Username" required autofocus>
+            
+             <label class=""> Password </label>
+                <input type="password" class="form-control" name="password" placeholder="Masukkan Password" required>
+            
+               <button class="btn btn-lg btn-primary btn-block" type="submit" name="submit" id="submit">
+                    Masuk
+            </button>   
+            
+          </form>
+            </div>
+          
+            <p class="text-center"> Halaman ini khusus untuk Admin!  <a href="#"  data-toggle="modal" data-target="#myModal"> Bukan Admin?</a></p>
+
 	</form>
 	</div>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 </body>
 </html>
