@@ -78,7 +78,7 @@
           </form>
             </div>
           
-            <p class="text-center"> Halaman ini khusus untuk Admin!  <a href="#"  data-toggle="modal" data-target="#myModal"> Bukan Admin?</a></p>
+            <p class="text-center"> Halaman ini khusus untuk Admin!  <a href="index.php"  data-toggle="modal" data-target="#myModal"> Bukan Admin?</a></p>
 
 	</form>
 	</div>

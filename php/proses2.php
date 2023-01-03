@@ -13,6 +13,6 @@ if(isset($_POST['create'])){
     $query = mysqli_query($db, $sql);
     // $query = mysqli_query($db, )
 }
-header("location: ../index.php");
+header("location: ../tambah.php");
 
 ?>

@@ -17,6 +17,7 @@
 </head>
 <body background="image/bg.jpg" style="background-size: 100%; width: 500% background-repeat: no-repeat ">
 <!-- MENU NAVIGASI BAR -->
+<br><br><br>
 <nav class="navbar navbar-expand-lg bg-light m-sm-auto shadow p-3 mb-5 bg-body rounded fixed-top ">
   <div class="container-fluid">
     <a class="navbar-brand" href="index.php"><img src="image/logo.png" height="40px"> Rosalia Indah Express Pasuruan</a>
@@ -28,8 +29,7 @@
         <a class="nav-link active" aria-current="page" href="#home">Home</a>
         <a class="nav-link" href="index.php#about">About</a>
         <a class="nav-link" href="index.php#form">Pesan Tiket</a>
-        <a class="nav-link" href="index.php#tabel">Daftar Pemesan Tiket</a>
-      </div>
+        </div>
     </div>
   </div>
 </nav>
@@ -85,7 +85,6 @@ $tampil = mysqli_query($db, $sql);
 while($array = mysqli_fetch_array($tampil)){
 ?>
 
-<!-- PHP Berakhir -->
 <tr>
   <td><?php echo $array['kelas']; ?></td>   
   <td><?php echo $array['tujuan']; ?></td>
@@ -96,11 +95,12 @@ while($array = mysqli_fetch_array($tampil)){
       <?php
 }
 ?>
+<!-- PHP Berakhir -->
     </table>
     </div>
     </div>
     <!-- AKHIR DAFTAR HARGA -->
-
+    
     <div class="tab-pane fade show active" id="form" role="tabpanel" aria-labelledby="form-tab">
     <div class="container" style="background-color: rgba(67, 228, 129, 0.8);">
       <h1 class="text-center alert mt-3 container">Pesan Tiket</h1>
@@ -164,49 +164,9 @@ while($array = mysqli_fetch_array($tampil)){
 <!-- TAMPILAN TABEL YANG SUDAH DIINPUTKAN -->
 <div class="container text-xl-center">
 <div class="tab-pane fade show active" id="tabel" role="tabpanel" aria-labelledby="tabel-tab">
-<h2>Daftar Pemesanan Tiket</h2>
-<table border="1" align="center">
-    <tr>
-        <td>No.</td>
-        <td>Nama</td>
-        <td>No. Identitas</td>
-        <td>No. HP</td>
-        <td>Kelas Penumpang</td>
-        <td>Jadwal</td>
-        <td>Jumlah Penumpang</td>
-        <td>Jumlah Penumpang Lansia</td>
-        <td colspan="3">
-          Atur
-        </td>
-    </tr>
-    <tr>
-    <?php
+<h2>Contact Us</h2>
+<h6>Cs : 08587907978123 (Soso)</h6>
 
-        $sql="SELECT * FROM tbpesan";
-        $no = 1;
-        $tampil = mysqli_query($db, $sql);
-        while($hasil = mysqli_fetch_array($tampil)){
-    ?>
-        <td><?php echo $no++; ?></td>
-        <td><?php echo $hasil['nama']; ?></td>
-        <td><?php echo $hasil['noid']; ?></td>
-        <td><?php echo $hasil['nohp']; ?></td>
-        <td><?php echo $hasil['kelas']; ?></td>
-        <td><?php echo $hasil['jadwal']; ?></td>
-        <td><?php echo $hasil['jnorm']; ?></td>
-        <td><?php echo $hasil['jtua']; ?></td>
-        <td>
-          <a href="edit.php?noid=<?php echo $hasil['noid']; ?>"><button type="button" class="btn btn-warning btn-outline-dark">Edit</button></a> | 
-          <a href="print1.php?noid=<?php echo $hasil['noid']; ?>"><button type="button" class="btn btn-primary btn-outline-dark text-white">Print</button></a> | 
-        <a href="php/delete.php?&noid=<?php echo $hasil['noid']; ?>"><button type="button" class="btn btn-danger btn-outline-dark text-white">Hapus</button></a> </td>
-
-    </tr>
-    <?php
-        }
-    ?>
-</table>
-<p></p>
-<a href="print.php"> <input type="button" value="CETAK" class="btn btn-light btn-outline-dark"> </a>
 </div>
 <!-- AKHIRAN TAMPILAN TABEL YANG SUDAH DIINPUTKAN -->
 </body>
