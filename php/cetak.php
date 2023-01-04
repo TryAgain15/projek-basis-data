@@ -52,11 +52,7 @@ include'koneksi.php';
         <p></p>
         <label for="jnorm">Jumlah Penumpang</label>
         <input type="number" name="jnorm" id="jnorm" value="0">
-        <p>Bukan Lansia (Usia<60) </p>
-        <p></p>
-        <label for="jtua">Jumlah Penumpang Lansia</label>
-        <input type="number" name="jtua" id="jtua" value="0">
-        <p> Usia 60 tahun ke atas</p>
+
         <!-- Akhir Konten/Formulir -->
         <p>
         <!-- <form action="" method="POST"> -->

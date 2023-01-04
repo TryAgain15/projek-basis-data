@@ -6,13 +6,13 @@ $nohp = $_POST['nohp'];
 $kelas = $_POST['kelas'];
 $jadwal = $_POST['jadwal'];
 $jnorm = $_POST['jnorm'];
-$jtua = $_POST['jtua'];
+
 
 // var_dump('y');    
 
 if(isset($_POST['create'])){
 
-    $sql =  "INSERT INTO tbpesan VALUES('','$nama','$noid','$nohp','$kelas','$jadwal','$jnorm','$jtua')";
+    $sql =  "INSERT INTO tbpesan VALUES('','$nama','$noid','$nohp','$kelas','$jadwal','$jnorm')";
     $query = mysqli_query($db, $sql);
     // $query = mysqli_query($db, )
 

@@ -138,11 +138,8 @@ while($array = mysqli_fetch_array($tampil)){
         <p></p>
         <label for="jnorm">Jumlah Penumpang</label>
         <input type="number" name="jnorm" class="form-control" id="jnorm" value="0">
-        <p style="font-size: 60%;">Bukan Lansia (Usia<60) </p>
-        <p></p>
-        <label for="jtua">Jumlah Penumpang Lansia</label>
-        <input type="number" name="jtua" class="form-control" id="jtua" value="0">
-        <p style = " font-size: 60%; " > Usia 60 tahun ke atas</p>
+        <br>
+        
         <!-- Akhir Konten/Formulir -->
          
 <p>

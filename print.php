@@ -36,7 +36,6 @@
         <td><?php echo $hasil['kelas']; ?></td>
         <td><?php echo $hasil['jadwal']; ?></td>
         <td><?php echo $hasil['jnorm']; ?></td>
-        <td><?php echo $hasil['jtua']; ?></td>
         
     </tr>
     <?php
