@@ -125,9 +125,9 @@ while($array = mysqli_fetch_array($tampil)){
             <!-- <input type="button" value="kelas">  Kelas -->
         <label for="Kelas Penumpang"> <i class="fa fa-caret-down">Kelas Penumpang</i></label> 
             <select name="kelas" id="kelas" class="form-control">
-       <option value="ekonomi" name="kelas" id="ekonomi">Ekonomi</option>
-        <option value="bisnis" nama="kelas" id="bisnis">Bisnis</option>
-        <option value="eksekutif" name="kelas" id="eksekutif"> Eksekutif</option>
+       <option value="Ekonomi" name="kelas" id="Ekonomi">Ekonomi</option>
+        <option value="Bisnis" nama="kelas" id="Bisnis">Bisnis</option>
+        <option value="Eksekutif" name="kelas" id="Eksekutif"> Eksekutif</option>
         
         </select>
         </div>

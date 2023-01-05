@@ -23,8 +23,7 @@
         <a class="nav-link active" aria-current="page" href="index.php">Home</a>
         <a class="nav-link" href="index.php#about">About</a>
         <a class="nav-link" href="index.php#form">Pesan Tiket</a>
-        <a class="nav-link" href="index.php#tabel">Daftar Pemesan Tiket</a>
-      </div>
+        </div>
     </div>
   </div>
 </nav>
@@ -49,41 +48,42 @@
 
       <!-- PHP Berakhir -->
       <!-- Isi konten/Formulir -->
-      
+<p></p>
+      <label for="id">Id Tiket</label>
+        <input type="number" name="id" id="id" class="form-control" disabled value="<?php echo $array['id'];?>" />
+        <p></p>
         <label for="nama">Nama Lengkap</label>
-        <input type="text" name="nama" id="nama" class="form-control" value="<?php echo $array['nama'];?>" />
+        <input type="text" name="nama" id="nama" class="form-control" disabled value="<?php echo $array['nama'];?>" />
         <p></p>
         <label for="noid">No Identitas</label>
-        <input type="number" name="noid" id="noid" class="form-control" value="<?php echo $array['noid'];?>" />
+        <input type="number" name="noid" id="noid" class="form-control" disabled value="<?php echo $array['noid'];?>" />
         <p></p>
         <label for="nohp">NO. HP</label>
-        <input type="number" name="nohp" id="nohp" class="form-control" value="<?php echo $array['nohp'];?>" />
+        <input type="number" name="nohp" id="nohp" disabled class="form-control" value="<?php echo $array['nohp'];?>" />
         <p></p>
 
         <!-- KELAS -->
-        <div class="form-group">
-        <label for="Kelas Penumpang"> <i class="fa fa-caret-down">Kelas Penumpang</i></label> 
-            <select name="kelas" id="kelas" class="form-control">
-       <option value="<?php echo $array['kelas'];?>" name="kelas" id="<?php echo $array['kelas'];?>"><?php echo $array['kelas'];?></option>
-       <option value="ekonomi" name="kelas" id="ekonomi">Ekonomi</option>
-        <option value="bisnis" nama="kelas" id="bisnis">Bisnis</option>
-        <option value="eksekutif" name="kelas" id="eksekutif"> Eksekutif</option>
-        </select>
-        </div>
+       
+        <label for="kelas">Kelas</label>
+        <input type="text" name="kelas" id="kelas" disabled class="form-control" value="<?php echo $array['kelas'];?>" />
         <!-- AKHIR KELAS -->
 
         <p></p>
         <label for="jadwal">jadwal Keberangkatan</label>
-        <input type="date" name="jadwal" id="jadwal" class="form-control" value="<?php echo $array['jadwal'];?>">
+        <input type="date" name="jadwal" disabled id="jadwal" class="form-control" value="<?php echo $array['jadwal'];?>">
         <p></p>
         <label for="jnorm">Jumlah Penumpang</label>
-        <input type="number" name="jnorm" class="form-control" id="jnorm" value="<?php echo $array['jnorm'];?>">
+        <input type="number" name="jnorm" disabled class="form-control" id="jnorm" value="<?php echo $array['jnorm'];?>">
 <br>
         <!-- Akhir Konten/Formulir -->
         
     </form>
-    </div>   
-    <!--AKHIR DARI FORMULIR PEMBELIAN TIKET -->
+  </div>  
+  <br> 
+  <center>
+    <a href="tambah.php"> <button class="btn btn-success center-align yellow"><< Back</button> </a>
+  </center>
+  <!--AKHIR DARI FORMULIR PEMBELIAN TIKET -->
 
 </body>
 </html>

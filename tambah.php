@@ -105,7 +105,7 @@ else {
     echo "<script>
         alert('Anda Harus Login Dahulu!');
     </script>";
-    header("location:logadmin.php?pesan=belum_login");
+    header("location:logadmin.php");
 }
 include 'penumpang.php';
 ?>

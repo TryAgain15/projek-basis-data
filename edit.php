@@ -26,7 +26,7 @@ include "php/koneksi.php";
         <a class="nav-link active" aria-current="page" href="index.php">Home</a>
         <a class="nav-link" href="index.php#about">About</a>
         <a class="nav-link" href="index.php#form">Pesan Tiket</a>
-        <a class="nav-link" href="index.php#tabel">Daftar Pemesan Tiket</a>
+        
       </div>
     </div>
   </div>
@@ -76,10 +76,9 @@ while($array = mysqli_fetch_array($tampil)){
       <h1 class="text-center alert mt-3 container">Pesan Tiket</h1>
       <h3>Pemesanan Tiket Bus AKAP</h3>
     <!-- FORMULIR PEMBELIAN TIKET -->
-      <form action="php/update.php" method="POST" enctype="multipart/form-data" onsubmit="return cekform()">
-      
-      <!-- Pilih Data di PHP -->
-        <?php
+    
+    <!-- Pilih Data di PHP -->
+    <?php
         extract ($_POST); 
         extract ($_GET); 
         include "php/koneksi.php";
@@ -88,14 +87,18 @@ while($array = mysqli_fetch_array($tampil)){
         $array=mysqli_fetch_array($query); 
         ?>
 
-      <!-- PHP Berakhir -->
-      <!-- Isi konten/Formulir -->
-      
+<!-- PHP Berakhir -->
+<!-- Isi konten/Formulir -->
+<form action="php/update.php" method="POST" enctype="multipart/form-data" onsubmit="return cekform()">
+
+        <label for="id">Id Tiket</label>
+        <input type="number" name="id" id="id" class="form-control" disabled value="<?php echo $array['id'];?>" />
+        <p></p>
         <label for="nama">Nama Lengkap</label>
         <input type="text" name="nama" id="nama" class="form-control" value="<?php echo $array['nama'];?>" />
         <p></p>
-        <label for="noid">No Identitas</label>
-        <input type="number" name="noid" id="noid" class="form-control" value="<?php echo $array['noid'];?>" />
+        <!-- <label for="noid">No Identitas</label> -->
+        <input type="hidden" name="noid" id="noid" class="form-control" value="<?php echo $array['noid'];?>" />
         <p></p>
         <label for="nohp">NO. HP</label>
         <input type="number" name="nohp" id="nohp" class="form-control" value="<?php echo $array['nohp'];?>" />
@@ -106,9 +109,9 @@ while($array = mysqli_fetch_array($tampil)){
         <label for="Kelas Penumpang"> <i class="fa fa-caret-down">Kelas Penumpang</i></label> 
             <select name="kelas" id="kelas" class="form-control">
        <option value="<?php echo $array['kelas'];?>" name="kelas" id="<?php echo $array['kelas'];?>"><?php echo $array['kelas'];?></option>
-       <option value="ekonomi" name="kelas" id="ekonomi">Ekonomi</option>
-        <option value="bisnis" nama="kelas" id="bisnis">Bisnis</option>
-        <option value="eksekutif" name="kelas" id="eksekutif"> Eksekutif</option>
+       <option value="Ekonomi" name="kelas" id="Ekonomi">Ekonomi</option>
+        <option value="Bisnis" nama="kelas" id="Bisnis">Bisnis</option>
+        <option value="Eksekutif" name="kelas" id="Eksekutif"> Eksekutif</option>
         </select>
         </div>
         <!-- AKHIR KELAS -->
@@ -121,17 +124,20 @@ while($array = mysqli_fetch_array($tampil)){
         <input type="number" name="jnorm" class="form-control" id="jnorm" value="<?php echo $array['jnorm'];?>">
               
         <!-- Akhir Konten/Formulir -->
-         
-<p>
-       
+         <br>
         <button type="submit" class="btn btn-success" value="simpan" name="simpan">Simpan</button>
         <button type="reset" class="btn btn-danger">Reset</button>
         <!-- Akhir Tombol -->
         <!-- </form>     -->
-        <a href="php/p.php"> <input type="button" class="btn btn-primary" value="Cek Harga" name="Perkiraan Harga" ></a>
+        
         
     </form>
-    </div>   
+    </div> 
+    <br>  
+    <center>
+    <a href="tambah.php"> <button class="btn btn-warning center-align"><< Back</button> </a>
+  </center>
+  <br>
     <!--AKHIR DARI FORMULIR PEMBELIAN TIKET -->
 
 </body>

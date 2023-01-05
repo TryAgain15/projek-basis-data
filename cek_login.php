@@ -25,7 +25,7 @@ include "php/koneksi.php";
             else
             {
                 echo "<meta http-equiv='refresh' content='0; url=logadmin.php'>";
-                echo "<script>alert('Anda Gagal Log In');</script>";
+                echo "<script>alert('Gagal Log In. Username atau Password Anda Salah');</script>";
             }
         
         

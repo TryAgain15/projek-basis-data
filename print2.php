@@ -55,7 +55,8 @@ include "php/koneksi.php";
 
       <!-- PHP Berakhir -->
       <!-- Isi konten/Formulir -->
-      
+      <label for="id">Id Tiket</label>
+        <input type="number" name="id" id="id" class="form-control" disabled value="<?php echo $array['id'];?>" />
         <label for="nama">Nama Lengkap</label>
         <input type="text" name="nama" id="nama" class="form-control" value="<?php echo $array['nama'];?>" />
         <p></p>

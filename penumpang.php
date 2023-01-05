@@ -3,7 +3,7 @@
 <h2>Daftar Pemesanan Tiket</h2>
 <table border="1" align="center">
     <tr>
-        <td>No.</td>
+        <td>No. Tiket</td>
         <td>Nama</td>
         <td>No. Identitas</td>
         <td>No. HP</td>
@@ -19,11 +19,10 @@
     <?php
 
         $sql="SELECT * FROM tbpesan";
-        $no = 1;
         $tampil = mysqli_query($db, $sql);
         while($hasil = mysqli_fetch_array($tampil)){
     ?>
-        <td><?php echo $no++; ?></td>
+        <td><?php echo $hasil['id']; ?></td>
         <td><?php echo $hasil['nama']; ?></td>
         <td><?php echo $hasil['noid']; ?></td>
         <td><?php echo $hasil['nohp']; ?></td>
