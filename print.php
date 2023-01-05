@@ -19,7 +19,7 @@
         <td>Kelas Penumpang</td>
         <td>Jadwal</td>
         <td>Jumlah Penumpang</td>
-        <td>Jumlah Penumpang Lansia</td>
+        
     </tr>
     <tr>
     <?php
@@ -35,7 +35,7 @@
         <td><?php echo $hasil['nohp']; ?></td>
         <td><?php echo $hasil['kelas']; ?></td>
         <td><?php echo $hasil['jadwal']; ?></td>
-        <td><?php echo $hasil['jnorm']; ?></td>
+        
         
     </tr>
     <?php
